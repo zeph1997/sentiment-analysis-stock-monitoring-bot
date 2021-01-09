@@ -37,6 +37,12 @@ def search_stock(m):
     for i in range(1,len(userText)):
         tickers.append(userText[i].split(" ")[0].upper())
     for j in tickers:
-        bot.send_message(m.from_user.id,f"Sentiment Analysis for ${j}: {get_sentiment_score(j)}\n\n")
+        score = get_sentiment_score(j)
+        sentiment = "Neutral / Mixed 😐"
+        if score < -1:
+            sentiment = "Negative 🔻😢"
+        elif score > 1:
+            sentiment = "Positive 🔼😄"
+        bot.send_message(m.from_user.id,f"Sentiment Analysis for ${j}: {score}\nThe sentiment is *{sentiment}*\n\n",parse_mode="Markdown")
 
 bot.polling()
