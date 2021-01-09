@@ -48,10 +48,10 @@ def search_stock(m):
         score = get_sentiment_score(j)
         if score:
             sentiment = "Neutral / Mixed 😐"
-            if score < -1:
+            if score < -0.1:
                 sentiment = "Negative 🔻😢"
-            elif score > 1:
-                sentiment = "Positive 🔼😄"
+            elif score > 0.1:
+                sentiment = "Positive 🚀😄"
             bot.send_message(m.from_user.id,f"🧮 Sentiment Score for ${j}: {score:.3f}\nThe sentiment is *{sentiment}*\n\n",parse_mode="Markdown")
         else:
             bot.send_message(m.from_user.id,f"Hey, it seems like ${j} does not exist. Please modify it before I search again!")
