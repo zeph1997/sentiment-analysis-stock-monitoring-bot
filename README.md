@@ -1,6 +1,6 @@
 # sentiment-analysis-stock-monitoring-bot
 A Telegram bot that will perform sentiment analysis on news to determine the sentiment of a give stock
-Developed during Hack & Roll 2021 by Zeph Ng and Marcus Lee
+Developed during Hack & Roll 2021 by [Zeph Ng](https://github.com/zeph1997) and [Marcus Lee](https://github.com/marcusleeeugene)
 
 # Dependencies
 * pip install pytelegrambotapi
