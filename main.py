@@ -24,7 +24,6 @@ def get_sentiment_score(ticker):
     for i in headlines:
         score += vader.polarity_scores(i.text)["compound"]
         num += 1
-    print(score)
     return score/num
 
 @bot.message_handler(commands=["start"])
